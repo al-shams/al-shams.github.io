@@ -100,126 +100,120 @@
             <div class="my-3 text-muted">
                 July 25, 2023
             </div>
-            <div class="card-text"><p>The following report was compiled as part of my comprehensive research on applying
-                reinforcement learning solutions in telecom networks. To obtain the complete report,
-                please contact me via email.</p>
+            <div class="card-text"><p>This report was compiled as part of my comprehensive research on the application
+                of reinforcement learning solutions in telecom networks. To obtain the full report, please feel free to
+                contact me via email.</p>
                 <hr/>
                 <h4>Abstract</h4>
                 <p>
-                    In recent decades, mobile networks have expanded to provide coverage to as many people as
-                    possible. In this regard, urban areas with higher user density have better service coverage than
-                    less populated areas, mainly in the vicinity of cities. However, as continuous access to the
-                    services of these networks has become a necessity today, mobile phone operators are expanding their
-                    networks to cover more users in remote areas. Even in areas with sufficient coverage, service
-                    quality can diminish during peak times due to network congestion and the limited resources of mobile
-                    phone operators. One possible solution is to increase the density of cells to boost the overall
-                    network capacity in such situations.
-                    While this short-term oversupply of resources can improve service quality, it results in long-term
-                    costs economically (in terms of updating new base stations and enhancing the network core) and
-                    environmentally (related to providing energy to new base stations) for mobile phone operators.
-                    Therefore, solutions should be sought to reduce the costs associated with deploying these resources
-                    while providing suitable service quality to users. These solutions should consider criteria such as
-                    dynamic demand for network resources, traffic patterns, and, notably, the spatiotemporal
-                    characteristics of mobile phone users.
-                    Within the life cycle of radio networks, these issues fall under the category of self-optimization
-                    problems. They encompass a range of approaches and mechanisms to optimize key network parameters in
-                    real-time, using data received from network cells. One of the most widely recognized challenges for
-                    which practical solutions have been implemented or are in progress by leading operators worldwide is
-                    optimizing network cell coverage and capacity. This problem involves numerous adjustable parameters
-                    and complex dependencies that cannot be effectively addressed using traditional AI approaches.
-                    Recent research and practical efforts are showing promise in solving such problems with extensive
-                    state spaces using deep reinforcement learning approaches.
+                    In recent decades, mobile networks have expanded to provide coverage to as many people as possible.
+                    Urban areas with higher user density typically enjoy better service coverage than less populated
+                    areas, especially in the outskirts of cities. However, as continuous access to network services has
+                    become a necessity, mobile phone operators are now extending their networks to reach users in remote
+                    regions. Even in areas with adequate coverage, service quality can decline during peak times due to
+                    network congestion and the limited resources of mobile operators. One possible solution is to
+                    increase the density of cells to boost overall network capacity in such situations. While this
+                    short-term oversupply of resources can enhance service quality, it results in long-term costs—both
+                    economically (upgrading new base stations and enhancing the network core) and environmentally
+                    (providing energy to new base stations) for mobile operators. Therefore, solutions must be sought to
+                    reduce the costs associated with deploying these resources while maintaining adequate service
+                    quality. These solutions should account for dynamic demand for network resources, traffic patterns,
+                    and, importantly, the spatiotemporal characteristics of mobile users. Within the life cycle of radio
+                    networks, these issues fall under self-optimization problems. They include various approaches and
+                    mechanisms to optimize key network parameters in real-time, using data from network cells. One of
+                    the most widely recognized challenges, for which practical solutions have been implemented or are
+                    being developed by leading operators worldwide, is the optimization of network cell coverage and
+                    capacity. This challenge involves numerous adjustable parameters and complex dependencies that
+                    cannot be effectively addressed using traditional AI methods. Recent research and practical
+                    advancements have shown promise in solving such problems with large state spaces using deep
+                    reinforcement learning approaches.
                 </p>
                 <h6 id="index-terms"><em>Index Terms</em>: Multi-agent Systems, Deep Reinforcement Learning,
                     Self-organizing Networks</h6>
                 <h4>&#8544. INTRODUCTION</h4>
                 <p>
-                    Self-organized networks were initially introduced by the 3GPP standardization organization to
-                    streamlining the planning, configuration, management, optimization, and troubleshooting of
-                    radio access networks. This concept has evolved through various versions of the LTE and NGMN
-                    standards. It encompasses a suite of self-configuration, self-optimization, and self-healing
-                    solutions. Fig. 1 illustrates the placement of these three solutions within the lifecycle of radio
-                    networks.
+                    Self-organizing networks were initially introduced by the 3GPP standardization organization to
+                    streamline the planning, configuration, management, optimization, and troubleshooting of radio
+                    access networks. This concept has evolved across various versions of the LTE and NGMN standards,
+                    incorporating a suite of self-configuration, self-optimization, and self-healing solutions. Figure 1
+                    illustrates the placement of these three solutions within the lifecycle of radio networks.
                 <div class="row justify-content-center">
                     <div class="figure col col-sm-6 col-10 align-self-center my-4 img">
-                        <img class="rounded" alt="Life-Cycle of Radio Network"
+                        <img class="rounded" alt="Life Cycle of a Radio Network"
                              src="/assets/images/life-cycle-of-radio-network.svg"/>
-                        <div class="figure-caption text-center text-dark">Fig. 1. Life-Cycle of Radio Network
+                        <div class="figure-caption text-center text-dark">Fig. 1. Life Cycle of a Radio Network
                         </div>
                     </div>
                 </div>
                 <ul>
-                    <li><strong>Self-configuration:</strong> The functions within this solution aim to automate the
-                        introduction of new services with minimal human intervention and are integrated into the
-                        planning and deployment phases of radio networks.
+                    <li><strong>Self-configuration:</strong> This solution automates the introduction of new services
+                        with minimal human intervention, integrating these functions into the planning and deployment
+                        phases of radio networks.
                     </li>
-                    <li><strong>Self-healing:</strong> Elements within radio networks are susceptible to errors and
-                        failures. Self-healing functions concentrate on the maintenance phase of these elements. For
-                        instance, in the event of a network cell failure, the services of users within the affected cell
-                        are automatically transitioned to nearby cells with available capacity.
+                    <li><strong>Self-healing:</strong> Radio network elements are susceptible to errors and failures.
+                        Self-healing functions focus on the maintenance phase of these elements. For instance, in the
+                        event of a network cell failure, the services for users within the affected cell are
+                        automatically transitioned to nearby cells with available capacity.
                     </li>
-                    <li><strong>Self-optimization:</strong> After designing and deploying the network elements,
-                        configuring the relevant parameters, establishing connections to the network core, and
-                        ultimately transitioning to operational mode, it is essential to enhance the efficiency of these
-                        elements continuously. This improvement is performed in real-time based on data received from
-                        network cells. In this proposed design, our primary emphasis will be on the functions within
-                        this section.
+                    <li><strong>Self-optimization:</strong> Once network elements are designed, deployed, configured,
+                        and connected to the network core, and after transitioning to operational mode, it is essential
+                        to continuously enhance the efficiency of these elements. This improvement is performed in
+                        real-time based on data received from network cells. In this proposed design, our primary focus
+                        will be on the functions within this area.
                     </li>
                 </ul>
                 </p>
                 <h4>&#8545. SUCCESSFUL RL USE CASES - SWISSCOM</h4>
                 <p>
-                    As Switzerland's largest telecommunications company, providing a wide array of communication
-                    services, Swisscom confronts the challenge of curbing energy emissions in the existing low-band
-                    layers. This energy reduction must be substantial enough to create space to establish a new low-band
-                    layer. Stringent Swiss government regulations govern the effective radiation power of mobile
-                    networks, on the one hand, and the inadequacy of power in the new low-band layer and the
-                    coverage mismatch with the existing layer, on the other hand, have compelled the company to employ
-                    reinforcement learning approaches to address this challenge. As illustrated in Fig. 2, they
-                    initially optimized the ERP parameter and subsequently addressed the RET parameter in two separate
-                    steps.
+                    As Switzerland's largest telecommunications provider, offering a broad range of communication
+                    services, Swisscom faces the challenge of reducing energy emissions in its existing low-band layers.
+                    This energy reduction must be substantial enough to make room for the deployment of a new low-band
+                    layer. Stringent Swiss government regulations governing the effective radiated power (ERP) of mobile
+                    networks, combined with the power insufficiency in the new low-band layer and the coverage mismatch
+                    with the existing layer, have pushed the company to adopt reinforcement learning (RL) approaches to
+                    solve this issue. As illustrated in Figure 2, they first optimized the ERP parameter and then
+                    addressed the RET (Remote Electrical Tilt) parameter in two distinct steps.
                 <div class="row justify-content-center">
                     <div class="figure col col-sm-4 col-10 align-self-center my-4 img">
-                        <img class="rounded" alt="Live Networks Using Simulators and Emulators as Digital Twins"
+                        <img class="rounded" alt="Live Networks Utilizing Simulators and Emulators as Digital Twins"
                              src="/assets/images/live-networks-using-simulators-and-emulators-as-digital-twins.svg"/>
-                        <div class="figure-caption text-center text-dark">Fig. 2. Live Networks Using Simulators and
+                        <div class="figure-caption text-center text-dark">Fig. 2. Live Networks Utilizing Simulators and
                             Emulators as Digital Twins
                         </div>
                     </div>
                 </div>
                 <ul>
-                    <li><strong>Effective Radiated Power:</strong> Minimizing the ERP parameter to the greatest extent
-                        possible while preserving coverage and maintaining the quality of service to users by applying
-                        reinforcement learning techniques and utilizing a network simulator, acting as a digital
-                        counterpart.
+                    <li><strong>Effective Radiated Power (ERP):</strong> Minimizing the ERP parameter as much as
+                        possible while maintaining coverage and ensuring quality of service for users was achieved by
+                        applying reinforcement learning techniques and utilizing a network simulator, which acted as a
+                        digital counterpart.
                     </li>
-                    <li><strong>Remote Electrical Tilt:</strong> Enhancing the RET parameter through a simulator-based
-                        optimization approach.
+                    <li><strong>Remote Electrical Tilt (RET):</strong> Optimizing the RET parameter was accomplished
+                        through a simulator-based approach.
                     </li>
                 </ul>
                 The experiment focused on optimizing the transmission power of the uplink connection and adjusting the
-                RET parameter in the Ticino region of Switzerland. This region comprises 163 fourth-generation cells
-                operating in the 800 MHz band, with 100 cells selected to optimize uplink transmission power and
-                subsequent RET parameter optimization. According to reports, the emulation of network behavior following
-                power adjustments was remarkably precise, eliminating the need for repeated online interactions with the
-                network. Instead, the final optimized values were acquired exclusively through interactions with the
-                digital counterpart. These values were then directly implemented and integrated into the network.
-                Subsequently, RET parameter optimization was implemented within the network, with the ultimate
-                modifications displayed in Fig. 3.
-                As indicated in Fig. 3, in areas where network antennas consume the maximum power, the electrical
-                tilt of the antenna is at its minimum, and vice versa. As a result of this testing, uplink transmission
-                power decreased by 10%, while uplink connection throughput increased by 12%. Additionally, after a
-                single iteration of optimization and network interaction, cumulative transmission power decreased by
-                20%, and uplink connection throughput increased by 5.5%. This reduction in the ERP parameter translates
-                to a 4.3% decrease in base station power consumption. Swisscom's experience is another example of
-                applying reinforcement learning approaches to learn, optimize, and ultimately automate complex processes
-                without human intervention.
+                RET parameter in the Ticino region of Switzerland. This region includes 163 fourth-generation cells
+                operating in the 800 MHz band, with 100 cells selected for uplink transmission power optimization,
+                followed by RET parameter optimization. Reports indicated that the emulation of network behavior after
+                power adjustments was remarkably accurate, removing the need for repeated online interactions with the
+                network. Instead, the final optimized values were obtained exclusively through interactions with the
+                digital counterpart, and these values were then directly implemented and integrated into the network.
+                Subsequently, RET parameter optimization was applied, with the final modifications shown in Figure 3. As
+                illustrated in Figure 3, in areas where network antennas consume maximum power, the antenna's electrical
+                tilt is at its minimum, and vice versa.
+                As a result of the testing, uplink transmission power was reduced by 10%, while uplink connection
+                throughput increased by 12%. Additionally, after a single iteration of optimization and network
+                interaction, cumulative transmission power was reduced by 20%, and uplink connection throughput
+                increased by 5.5%. This reduction in the ERP parameter led to a 4.3% decrease in base station power
+                consumption. Swisscom's experience is a prime example of how reinforcement learning approaches can be
+                applied to learn, optimize, and ultimately automate complex processes without human intervention.
                 <div class="row justify-content-center">
                     <div class="figure col col-sm-7 col-10 align-self-center my-4 img">
-                        <img class="rounded" alt="Power and RET Changes in the Ticino Region of Switzerland"
+                        <img class="rounded" alt="Power and RET Adjustments in the Ticino Region of Switzerland"
                              src="/assets/images/power-and-RET-changes-in-the-Ticino-area-of-Switzerland.svg"/>
-                        <div class="figure-caption text-center text-dark">Fig. 3. Power and RET Changes in the Ticino
-                            Region of Switzerland
+                        <div class="figure-caption text-center text-dark">Fig. 3. Power and RET Adjustments in the
+                            Ticino Region of Switzerland
                         </div>
                     </div>
                 </div>
